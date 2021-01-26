@@ -32,3 +32,13 @@ argCount: 2
 Arg0: read
 Arg1: //path/to/file
 ```
+
+Example usage:
+```go
+// Pass in an io.Reader, though you probably want os.Stdin to get input from p4broker
+res, err := Read(os.Stdin)
+if err != nil {
+	log.Fatalf("%v", err)
+}
+log.Printf("%v", res["Arg0"])
+```
