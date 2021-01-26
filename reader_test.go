@@ -23,8 +23,8 @@ func TestReadBasic(t *testing.T) {
 }
 
 func TestReadFull(t *testing.T) {
-	// A stdin replica
 	var stdin bytes.Buffer
+	// Read in a previously captured p4broker out
 	data, err := ioutil.ReadFile("./tst-in")
 	stdin.Write(data)
 
