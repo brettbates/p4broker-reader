@@ -20,10 +20,10 @@ func Read(stdin io.Reader) (map[string]string, error) {
 		line, err := reader.ReadString('\n')
 		line = strings.Replace(line, "\n", "", -1)
 		if err != nil {
-			log.Printf("Failed to read from stdin, err:\n\t%s", err)
 			if err == io.EOF {
 				break
 			}
+			log.Printf("Failed to read from stdin, err:\n\t%s", err)
 			return nil, err
 		}
 		// TODO check we have a x: y line
