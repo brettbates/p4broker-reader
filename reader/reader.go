@@ -1,11 +1,10 @@
-package main
+package reader
 
 import (
 	"bufio"
 	"fmt"
 	"io"
 	"log"
-	"os"
 	"strconv"
 	"strings"
 )
@@ -43,12 +42,4 @@ func Read(stdin io.Reader) (map[string]string, error) {
 		}
 	}
 	return out, nil
-}
-
-func main() {
-	res, err := Read(os.Stdin)
-	if err != nil {
-		log.Fatalf("%v", err)
-	}
-	log.Printf("%v", res)
 }
